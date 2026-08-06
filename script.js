@@ -1,95 +1,62 @@
-// Array para armazenar os itens do carrinho
 let cart = [];
 
-// Função para adicionar produtos ao carrinho
-function addToCart(productName, price) {
-  cart.push({ name: productName, price: price });
+function addToCart(name, price) {
+  cart.push({ name, price });
   updateCartUI();
-  showToast(`"${productName}" adicionado ao carrinho!`);
+  showToast(`"${name}" adicionado ao carrinho!`);
 }
 
-// Atualiza a interface do carrinho (quantidade e valor total)
 function updateCartUI() {
-  const cartCountEl = document.getElementById('cart-count');
-  const cartItemsList = document.getElementById('cart-items-list');
-  const cartTotalPrice = document.getElementById('cart-total-price');
+  document.getElementById('cart-count').innerText = cart.length;
+  const cartList = document.getElementById('cart-list');
+  const cartTotal = document.getElementById('cart-total');
 
-  // Atualiza contador
-  cartCountEl.innerText = cart.length;
-
-  // Limpa lista de itens
-  cartItemsList.innerHTML = '';
-
+  cartList.innerHTML = '';
   let total = 0;
 
   if (cart.length === 0) {
-    cartItemsList.innerHTML = '<li>Seu carrinho está vazio.</li>';
+    cartList.innerHTML = '<li>O carrinho está vazio.</li>';
   } else {
-    cart.forEach((item, index) => {
+    cart.forEach(item => {
       total += item.price;
       const li = document.createElement('li');
-      li.innerHTML = `
-        <span>${item.name}</span>
-        <span>R$ ${item.price.toFixed(2).replace('.', ',')}</span>
-      `;
-      cartItemsList.appendChild(li);
+      li.innerHTML = `<span>${item.name}</span> <strong>R$ ${item.price.toFixed(2)}</strong>`;
+      cartList.appendChild(li);
     });
   }
 
-  cartTotalPrice.innerText = `R$ ${total.toFixed(2).replace('.', ',')}`;
+  cartTotal.innerText = `R$ ${total.toFixed(2)}`;
 }
 
-// Abrir e Fechar Modal do Carrinho
+// Modal do Carrinho
 const cartBtn = document.getElementById('cart-btn');
 const cartModal = document.getElementById('cart-modal');
 const closeCart = document.getElementById('close-cart');
 
-cartBtn.addEventListener('click', () => {
-  cartModal.style.display = 'flex';
-});
+cartBtn.onclick = () => cartModal.style.display = 'flex';
+closeCart.onclick = () => cartModal.style.display = 'none';
+window.onclick = (e) => { if (e.target === cartModal) cartModal.style.display = 'none'; };
 
-closeCart.addEventListener('click', () => {
-  cartModal.style.display = 'none';
-});
-
-window.addEventListener('click', (event) => {
-  if (event.target === cartModal) {
-    cartModal.style.display = 'none';
-  }
-});
-
-// Exibir Notificação (Toast)
-function showToast(message) {
+function showToast(msg) {
   const toast = document.getElementById('toast');
-  toast.innerText = message;
+  toast.innerText = msg;
   toast.className = "toast show";
-  setTimeout(() => { 
-    toast.className = toast.className.replace("toast show", "toast"); 
-  }, 3000);
+  setTimeout(() => { toast.className = toast.className.replace("toast show", "toast"); }, 2800);
 }
 
-// Filtro de Busca de Produtos em Tempo Real
 function filterProducts() {
   const query = document.getElementById('search-input').value.toLowerCase();
-  const productCards = document.querySelectorAll('.product-card');
+  const products = document.querySelectorAll('.product-box');
 
-  productCards.forEach(card => {
-    const title = card.querySelector('.product-title').innerText.toLowerCase();
-    if (title.includes(query)) {
-      card.style.display = 'flex';
-    } else {
-      card.style.display = 'none';
-    }
+  products.forEach(box => {
+    const name = box.querySelector('.product-name').innerText.toLowerCase();
+    box.style.display = name.includes(query) ? 'flex' : 'none';
   });
 }
 
-// Finalizar Compra
 function checkout() {
-  if (cart.length === 0) {
-    alert("Seu carrinho está vazio!");
-    return;
-  }
-  alert("Obrigado pela compra! Seu pedido foi processado com sucesso.");
+  if (cart.length === 0) return alert('Seu carrinho está vazio!');
+  alert('Compra realizada com sucesso!');
   cart = [];
   updateCartUI();
   cartModal.style.display = 'none';

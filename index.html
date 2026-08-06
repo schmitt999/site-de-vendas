@@ -3,167 +3,157 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Empório Rústico - Sua Loja de Artefatos</title>
+  <title>Taberna do Artesão</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
   <div class="top-bar">
-    <div class="cart-status" id="cart-btn">
-      <i class="fa-solid fa-basket-shopping"></i>
-      <span>Meu Carrinho (<strong id="cart-count">0</strong>)</span>
-    </div>
+    <button id="cart-btn" class="cart-button">
+      <i class="fa-solid fa-basket-shopping"></i> Carrinho (<span id="cart-count">0</span>)
+    </button>
   </div>
 
-  <main class="main-container">
+  <main class="main-horizontal-layout">
 
-    <section class="wood-board">
-      <div class="board-header">
-        <h2><i class="fa-solid fa-boxes-stacked"></i> Catálogo Geral</h2>
+    <section class="wood-column">
+      <div class="column-header">
+        <h2>Catálogo</h2>
       </div>
-      <div class="product-grid" id="main-products">
-        <div class="product-card">
-          <div class="product-img-box">
-            <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=400&q=80" alt="Caderno de Couro">
+
+      <div class="products-grid-col1">
+        <div class="product-box">
+          <div class="img-wrapper">
+            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=300" alt="Caneca">
           </div>
-          <div class="product-info">
-            <h3 class="product-title">Caderno Artesanal de Couro</h3>
-            <p class="product-price">R$ 89,90</p>
-            <button class="add-to-cart-btn" onclick="addToCart('Caderno Artesanal de Couro', 89.90)"><i class="fa-solid fa-cart-plus"></i> Comprar</button>
-          </div>
+          <span class="product-name">Caneca Cerâmica</span>
+          <span class="product-price">R$ 45,00</span>
+          <button onclick="addToCart('Caneca Cerâmica', 45)" class="btn-buy">Comprar</button>
         </div>
 
-        <div class="product-card">
-          <div class="product-img-box">
-            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=400&q=80" alt="Caneca Rústica">
+        <div class="product-box">
+          <div class="img-wrapper">
+            <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?w=300" alt="Caderno">
           </div>
-          <div class="product-info">
-            <h3 class="product-title">Caneca de Cerâmica Rústica</h3>
-            <p class="product-price">R$ 45,00</p>
-            <button class="add-to-cart-btn" onclick="addToCart('Caneca de Cerâmica Rústica', 45.00)"><i class="fa-solid fa-cart-plus"></i> Comprar</button>
-          </div>
+          <span class="product-name">Caderno Couro</span>
+          <span class="product-price">R$ 85,00</span>
+          <button onclick="addToCart('Caderno Couro', 85)" class="btn-buy">Comprar</button>
         </div>
 
-        <div class="product-card">
-          <div class="product-img-box">
-            <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=400&q=80" alt="Vela Aromática">
+        <div class="product-box">
+          <div class="img-wrapper">
+            <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=300" alt="Vela">
           </div>
-          <div class="product-info">
-            <h3 class="product-title">Vela Rústica Mel & Canela</h3>
-            <p class="product-price">R$ 32,50</p>
-            <button class="add-to-cart-btn" onclick="addToCart('Vela Rústica Mel & Canela', 32.50)"><i class="fa-solid fa-cart-plus"></i> Comprar</button>
-          </div>
+          <span class="product-name">Vela Aromática</span>
+          <span class="product-price">R$ 30,00</span>
+          <button onclick="addToCart('Vela Aromática', 30)" class="btn-buy">Comprar</button>
         </div>
 
-        <div class="product-card">
-          <div class="product-img-box">
-            <img src="https://images.unsplash.com/photo-1590736704728-f4730bb30770?auto=format&fit=crop&w=400&q=80" alt="Luminária Madeira">
+        <div class="product-box">
+          <div class="img-wrapper">
+            <img src="https://images.unsplash.com/photo-1590736704728-f4730bb30770?w=300" alt="Luminária">
           </div>
-          <div class="product-info">
-            <h3 class="product-title">Luminária de Madeira Nobre</h3>
-            <p class="product-price">R$ 149,00</p>
-            <button class="add-to-cart-btn" onclick="addToCart('Luminária de Madeira Nobre', 149.00)"><i class="fa-solid fa-cart-plus"></i> Comprar</button>
+          <span class="product-name">Luminária</span>
+          <span class="product-price">R$ 120,00</span>
+          <button onclick="addToCart('Luminária', 120)" class="btn-buy">Comprar</button>
+        </div>
+
+        <div class="product-box">
+          <div class="img-wrapper">
+            <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=300" alt="Tábua">
           </div>
+          <span class="product-name">Tábua Rústica</span>
+          <span class="product-price">R$ 95,00</span>
+          <button onclick="addToCart('Tábua Rústica', 95)" class="btn-buy">Comprar</button>
+        </div>
+
+        <div class="product-box">
+          <div class="img-wrapper">
+            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=300" alt="Potes">
+          </div>
+          <span class="product-name">Kit Frascos</span>
+          <span class="product-price">R$ 60,00</span>
+          <button onclick="addToCart('Kit Frascos', 60)" class="btn-buy">Comprar</button>
         </div>
       </div>
     </section>
 
-    <section class="wood-board center-board">
+    <div class="vertical-wood-pillar"></div>
+
+    <section class="wood-column center-column">
       
-      <div class="site-title-oval">
-        <h1>EMPÓRIO RÚSTICO</h1>
-        <p class="tagline">Artefatos Únicos & Produtos Feitos à Mão</p>
+      <div class="oval-site-name">
+        <h1>TABERNA DO ARTESÃO</h1>
       </div>
 
-      <div class="hero-content">
-        <div class="banner-box">
-          <span class="badge-featured">DESTAQUE DA SEMANA</span>
-          <h2>Coleção Edição Limitada</h2>
-          <p>Encontre itens artesanais exclusivos em madeira, couro, pedra e cerâmica para transformar seu ambiente.</p>
-          
-          <div class="search-box">
-            <input type="text" id="search-input" placeholder="Buscar produto..." onkeyup="filterProducts()">
-            <button><i class="fa-solid fa-magnifying-glass"></i></button>
-          </div>
+      <div class="center-body">
+        <p class="welcome-text">Artefatos Exclusivos & Produtos Feitos à Mão</p>
+        
+        <div class="search-bar">
+          <input type="text" id="search-input" placeholder="Buscar no site..." onkeyup="filterProducts()">
+          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
 
-          <div class="store-features">
-            <div class="feature-item">
-              <i class="fa-solid fa-truck-fast"></i>
-              <span>Entrega Rápida</span>
-            </div>
-            <div class="feature-item">
-              <i class="fa-solid fa-hammer"></i>
-              <span>100% Manual</span>
-            </div>
-            <div class="feature-item">
-              <i class="fa-solid fa-shield-halved"></i>
-              <span>Garantia de Qualidade</span>
-            </div>
-          </div>
-
+        <div class="decorative-icon">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>Garantia de Qualidade</span>
         </div>
       </div>
 
     </section>
 
-    <section class="wood-board discounts-board">
+    <div class="vertical-wood-pillar"></div>
+
+    <section class="wood-column discount-column">
       
-      <div class="ribbon-banner">
+      <div class="ribbon-discount-tag">
         <span>DESCONTOS</span>
       </div>
 
-      <div class="product-grid discount-grid">
-        
-        <div class="product-card discount-card">
-          <span class="discount-tag">-25% OFF</span>
-          <div class="product-img-box">
-            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=400&q=80" alt="Conjunto de Potes">
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">Kit de Frascos de Vidro & Cortiça</h3>
-            <p class="product-price">
-              <span class="old-price">R$ 80,00</span>
-              <span class="new-price">R$ 59,90</span>
-            </p>
-            <button class="add-to-cart-btn" onclick="addToCart('Kit de Frascos de Vidro & Cortiça', 59.90)"><i class="fa-solid fa-cart-plus"></i> Garanta o Seu</button>
+      <div class="house-cards-vertical">
+        <div class="house-card">
+          <div class="house-roof"></div>
+          <div class="house-body">
+            <span class="badge-off">-20% OFF</span>
+            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=300" alt="Caneca Promo">
+            <span class="product-name">Caneca Especial</span>
+            <span class="old-price">R$ 50,00</span>
+            <span class="promo-price">R$ 40,00</span>
+            <button onclick="addToCart('Caneca Especial (Promo)', 40)" class="btn-buy">Garanta o Seu</button>
           </div>
         </div>
 
-        <div class="product-card discount-card">
-          <span class="discount-tag">-30% OFF</span>
-          <div class="product-img-box">
-            <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=400&q=80" alt="Tábua de Madeira">
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">Tábua Rústica de Corte</h3>
-            <p class="product-price">
-              <span class="old-price">R$ 110,00</span>
-              <span class="new-price">R$ 77,00</span>
-            </p>
-            <button class="add-to-cart-btn" onclick="addToCart('Tábua Rústica de Corte', 77.00)"><i class="fa-solid fa-cart-plus"></i> Garanta o Seu</button>
+        <div class="house-card">
+          <div class="house-roof"></div>
+          <div class="house-body">
+            <span class="badge-off">-30% OFF</span>
+            <img src="https://images.unsplash.com/photo-1590736704728-f4730bb30770?w=300" alt="Luminária Promo">
+            <span class="product-name">Luminária Rústica</span>
+            <span class="old-price">R$ 150,00</span>
+            <span class="promo-price">R$ 105,00</span>
+            <button onclick="addToCart('Luminária Rústica (Promo)', 105)" class="btn-buy">Garanta o Seu</button>
           </div>
         </div>
-
       </div>
+
     </section>
 
   </main>
 
-  <div class="cart-modal" id="cart-modal">
-    <div class="cart-modal-content">
-      <span class="close-modal" id="close-cart">&times;</span>
-      <h2><i class="fa-solid fa-cart-shopping"></i> Seu Carrinho</h2>
-      <ul id="cart-items-list" class="cart-list">
-        </ul>
-      <div class="cart-total-box">
-        <p>Total: <strong id="cart-total-price">R$ 0,00</strong></p>
-        <button class="checkout-btn" onclick="checkout()"><i class="fa-solid fa-check"></i> Finalizar Compra</button>
+  <div id="cart-modal" class="modal">
+    <div class="modal-content">
+      <span id="close-cart" class="close">&times;</span>
+      <h2><i class="fa-solid fa-basket-shopping"></i> Seu Carrinho</h2>
+      <ul id="cart-list"></ul>
+      <div class="cart-summary">
+        <p>Total: <strong id="cart-total">R$ 0,00</strong></p>
+        <button onclick="checkout()" class="btn-checkout">Finalizar Pedido</button>
       </div>
     </div>
   </div>
 
-  <div id="toast" class="toast">Produto adicionado ao carrinho!</div>
+  <div id="toast" class="toast">Produto adicionado!</div>
 
   <script src="script.js"></script>
 </body>
