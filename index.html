@@ -23,58 +23,58 @@
       </div>
 
       <div class="products-grid-col1">
-        <div class="product-box">
+        <div class="product-box searchable-product">
           <div class="img-wrapper">
-            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=300" alt="Caneca">
+            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=300" alt="Caneca Cerâmica">
           </div>
           <span class="product-name">Caneca Cerâmica</span>
           <span class="product-price">R$ 45,00</span>
           <button onclick="addToCart('Caneca Cerâmica', 45)" class="btn-buy">Comprar</button>
         </div>
 
-        <div class="product-box">
+        <div class="product-box searchable-product">
           <div class="img-wrapper">
-            <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?w=300" alt="Caderno">
+            <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?w=300" alt="Caderno Couro">
           </div>
           <span class="product-name">Caderno Couro</span>
           <span class="product-price">R$ 85,00</span>
           <button onclick="addToCart('Caderno Couro', 85)" class="btn-buy">Comprar</button>
         </div>
 
-        <div class="product-box">
+        <div class="product-box searchable-product">
           <div class="img-wrapper">
-            <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=300" alt="Vela">
+            <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=300" alt="Vela Aromática">
           </div>
           <span class="product-name">Vela Aromática</span>
           <span class="product-price">R$ 30,00</span>
           <button onclick="addToCart('Vela Aromática', 30)" class="btn-buy">Comprar</button>
         </div>
 
-        <div class="product-box">
+        <div class="product-box searchable-product">
           <div class="img-wrapper">
             <img src="https://images.unsplash.com/photo-1590736704728-f4730bb30770?w=300" alt="Luminária">
           </div>
-          <span class="product-name">Luminária</span>
+          <span class="product-name">Luminária Madeira</span>
           <span class="product-price">R$ 120,00</span>
-          <button onclick="addToCart('Luminária', 120)" class="btn-buy">Comprar</button>
+          <button onclick="addToCart('Luminária Madeira', 120)" class="btn-buy">Comprar</button>
         </div>
 
-        <div class="product-box">
+        <div class="product-box searchable-product">
           <div class="img-wrapper">
-            <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=300" alt="Tábua">
+            <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=300" alt="Tábua Rústica">
           </div>
           <span class="product-name">Tábua Rústica</span>
           <span class="product-price">R$ 95,00</span>
           <button onclick="addToCart('Tábua Rústica', 95)" class="btn-buy">Comprar</button>
         </div>
 
-        <div class="product-box">
+        <div class="product-box searchable-product">
           <div class="img-wrapper">
-            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=300" alt="Potes">
+            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=300" alt="Kit Frascos">
           </div>
-          <span class="product-name">Kit Frascos</span>
+          <span class="product-name">Kit Frascos Vidro</span>
           <span class="product-price">R$ 60,00</span>
-          <button onclick="addToCart('Kit Frascos', 60)" class="btn-buy">Comprar</button>
+          <button onclick="addToCart('Kit Frascos Vidro', 60)" class="btn-buy">Comprar</button>
         </div>
       </div>
     </section>
@@ -91,8 +91,8 @@
         <p class="welcome-text">Artefatos Exclusivos & Produtos Feitos à Mão</p>
         
         <div class="search-bar">
-          <input type="text" id="search-input" placeholder="Buscar no site..." onkeyup="filterProducts()">
-          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+          <input type="text" id="search-input" placeholder="Digite para buscar..." onkeyup="filterProducts()">
+          <button onclick="filterProducts()"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
 
         <div class="decorative-icon">
@@ -112,11 +112,11 @@
       </div>
 
       <div class="house-cards-vertical">
-        <div class="house-card">
+        <div class="house-card searchable-product">
           <div class="house-roof"></div>
           <div class="house-body">
             <span class="badge-off">-20% OFF</span>
-            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=300" alt="Caneca Promo">
+            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=300" alt="Caneca Especial">
             <span class="product-name">Caneca Especial</span>
             <span class="old-price">R$ 50,00</span>
             <span class="promo-price">R$ 40,00</span>
@@ -124,11 +124,11 @@
           </div>
         </div>
 
-        <div class="house-card">
+        <div class="house-card searchable-product">
           <div class="house-roof"></div>
           <div class="house-body">
             <span class="badge-off">-30% OFF</span>
-            <img src="https://images.unsplash.com/photo-1590736704728-f4730bb30770?w=300" alt="Luminária Promo">
+            <img src="https://images.unsplash.com/photo-1590736704728-f4730bb30770?w=300" alt="Luminária Rústica">
             <span class="product-name">Luminária Rústica</span>
             <span class="old-price">R$ 150,00</span>
             <span class="promo-price">R$ 105,00</span>

@@ -1,11 +1,13 @@
 let cart = [];
 
+// Adiciona produto ao carrinho
 function addToCart(name, price) {
   cart.push({ name, price });
   updateCartUI();
   showToast(`"${name}" adicionado ao carrinho!`);
 }
 
+// Atualiza o carrinho na tela
 function updateCartUI() {
   document.getElementById('cart-count').innerText = cart.length;
   const cartList = document.getElementById('cart-list');
@@ -37,6 +39,7 @@ cartBtn.onclick = () => cartModal.style.display = 'flex';
 closeCart.onclick = () => cartModal.style.display = 'none';
 window.onclick = (e) => { if (e.target === cartModal) cartModal.style.display = 'none'; };
 
+// Notificação rápida
 function showToast(msg) {
   const toast = document.getElementById('toast');
   toast.innerText = msg;
@@ -44,16 +47,32 @@ function showToast(msg) {
   setTimeout(() => { toast.className = toast.className.replace("toast show", "toast"); }, 2800);
 }
 
+// ================= SISTEMA DE BUSCA EM TEMPO REAL =================
 function filterProducts() {
-  const query = document.getElementById('search-input').value.toLowerCase();
-  const products = document.querySelectorAll('.product-box');
+  // Pega o texto digitado e transforma em letras minúsculas
+  const query = document.getElementById('search-input').value.toLowerCase().trim();
+  
+  // Seleciona todos os cards de produtos do site
+  const products = document.querySelectorAll('.searchable-product');
 
-  products.forEach(box => {
-    const name = box.querySelector('.product-name').innerText.toLowerCase();
-    box.style.display = name.includes(query) ? 'flex' : 'none';
+  products.forEach(product => {
+    // Busca pelo nome dentro do elemento .product-name
+    const nameElement = product.querySelector('.product-name');
+    
+    if (nameElement) {
+      const nameText = nameElement.innerText.toLowerCase();
+      
+      // Se o nome contiver o texto pesquisado, mostra o produto. Se não, esconde.
+      if (nameText.includes(query)) {
+        product.style.display = 'flex';
+      } else {
+        product.style.display = 'none';
+      }
+    }
   });
 }
 
+// Finalizar Pedido
 function checkout() {
   if (cart.length === 0) return alert('Seu carrinho está vazio!');
   alert('Compra realizada com sucesso!');
