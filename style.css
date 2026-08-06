@@ -1,0 +1,398 @@
+/* RESET BÁSICO E CONFIGURAÇÃO GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+/* FUNDO DE TIJOLOS DE PEDRA (STONE BRICK BACKGROUND) */
+body {
+  background-color: #2b2622;
+  background-image: 
+    linear-gradient(335deg, rgba(0,0,0,0.6) 0%, transparent 70%),
+    radial-gradient(circle, rgba(60,50,40,0.8) 0%, rgba(20,15,10,0.95) 100%),
+    repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(0,0,0,0.3) 40px, rgba(0,0,0,0.3) 42px),
+    repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(0,0,0,0.3) 80px, rgba(0,0,0,0.3) 82px);
+  color: #f2e3c6;
+  min-height: 100vh;
+  padding-bottom: 50px;
+}
+
+/* BARRA SUPERIOR E CARRINHO */
+.top-bar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.cart-status {
+  background: linear-gradient(180deg, #8a5323, #4a280d);
+  border: 3px solid #d4a359;
+  border-radius: 20px;
+  padding: 10px 20px;
+  color: #fff8e7;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+  transition: transform 0.2s, background 0.3s;
+}
+
+.cart-status:hover {
+  transform: scale(1.05);
+  background: linear-gradient(180deg, #a3642c, #5e3312);
+}
+
+/* CONTAINER PRINCIPAL DAS 3 PLACAS DE MADEIRA */
+.main-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  padding: 10px 20px;
+}
+
+/* PLACAS/PAINÉIS DE MADEIRA DAESTRUTURA DO DESENHO */
+.wood-board {
+  background: linear-gradient(180deg, #5c3a21 0%, #3d2311 100%);
+  border: 8px solid #291508;
+  outline: 4px solid #8c5832;
+  border-radius: 25px;
+  padding: 25px;
+  position: relative;
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.8), 0 10px 25px rgba(0,0,0,0.7);
+}
+
+.board-header {
+  text-align: center;
+  margin-bottom: 20px;
+  border-bottom: 2px dashed #8c5832;
+  padding-bottom: 10px;
+}
+
+.board-header h2 {
+  color: #fce8c3;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+}
+
+/* GRID DE PRODUTOS */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+/* QUADROS DOS PRODUTOS COM BORDA DE MADEIRA */
+.product-card {
+  background: #23140a;
+  border: 4px solid #704222;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+  position: relative;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.9), 0 4px 8px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  border-color: #d4a359;
+}
+
+.product-img-box {
+  width: 100%;
+  height: 130px;
+  border: 2px solid #4a2b15;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.product-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-title {
+  font-size: 0.95rem;
+  color: #f7e6ca;
+  margin-bottom: 8px;
+}
+
+.product-price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #e6b86a;
+  margin-bottom: 10px;
+}
+
+.add-to-cart-btn {
+  background: linear-gradient(180deg, #3b7a3b, #1d451d);
+  border: 2px solid #5cb85c;
+  color: white;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  transition: background 0.2s;
+}
+
+.add-to-cart-btn:hover {
+  background: linear-gradient(180deg, #489448, #265926);
+}
+
+/* PAINEL CENTRAL - NOME DO SITE & MEIO CONTEÚDO */
+.center-board {
+  text-align: center;
+  padding: 35px 20px;
+}
+
+/* OVAL COM O NOME DO SITE (EXATAMENTE COMO NO ESBOÇO) */
+.site-title-oval {
+  display: inline-block;
+  background: linear-gradient(180deg, #7a4823, #42210b);
+  border: 5px solid #d4a359;
+  border-radius: 50px;
+  padding: 15px 40px;
+  margin-bottom: 25px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.6);
+}
+
+.site-title-oval h1 {
+  font-size: 2.2rem;
+  color: #fff3db;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px #000;
+}
+
+.site-title-oval .tagline {
+  font-size: 0.9rem;
+  color: #d1b18c;
+  margin-top: 4px;
+}
+
+/* ÁREA DE CONTEÚDO DO MEIO (DESTAQUES & BUSCA) */
+.hero-content {
+  background: rgba(20, 10, 5, 0.6);
+  border: 2px solid #6e4223;
+  border-radius: 15px;
+  padding: 25px;
+}
+
+.badge-featured {
+  background: #a82e2e;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.hero-content h2 {
+  margin: 10px 0;
+  color: #ffd891;
+}
+
+.hero-content p {
+  color: #d1c0a5;
+  font-size: 0.95rem;
+  max-width: 600px;
+  margin: 0 auto 20px auto;
+  line-height: 1.4;
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  max-width: 400px;
+  margin: 0 auto 25px auto;
+}
+
+.search-box input {
+  width: 80%;
+  padding: 10px 15px;
+  border: 2px solid #8c5832;
+  border-radius: 8px 0 0 8px;
+  background: #1c0e07;
+  color: #fff;
+  outline: none;
+}
+
+.search-box button {
+  width: 20%;
+  background: #8c5832;
+  border: 2px solid #8c5832;
+  color: white;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+}
+
+.store-features {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 15px;
+  border-top: 1px solid #4a2b15;
+  padding-top: 20px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #e6c594;
+  font-size: 0.85rem;
+}
+
+/* SEÇÃO DE DESCONTOS COM BANNER DE FAIXA (RIBBON) */
+.discounts-board {
+  position: relative;
+}
+
+.ribbon-banner {
+  background: linear-gradient(180deg, #b83232, #7a1c1c);
+  border: 3px solid #ff9999;
+  color: #ffffff;
+  width: 220px;
+  margin: -40px auto 25px auto;
+  padding: 10px 0;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.4rem;
+  letter-spacing: 3px;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.6);
+  clip-path: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%, 10% 50%);
+}
+
+.discount-tag {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #d93838;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 3px 7px;
+  border-radius: 4px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #a3816c;
+  font-size: 0.85rem;
+  margin-right: 6px;
+}
+
+.new-price {
+  color: #5cdb5c;
+  font-weight: bold;
+}
+
+/* MODAL DE CARRINHO */
+.cart-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-modal-content {
+  background: #382012;
+  border: 5px solid #d4a359;
+  border-radius: 15px;
+  padding: 25px;
+  width: 90%;
+  max-width: 450px;
+  color: #fff;
+  position: relative;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #d4a359;
+}
+
+.cart-list {
+  list-style: none;
+  max-height: 200px;
+  overflow-y: auto;
+  margin: 15px 0;
+}
+
+.cart-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #57331c;
+}
+
+.cart-total-box {
+  text-align: right;
+  margin-top: 15px;
+}
+
+.checkout-btn {
+  background: #d4a359;
+  border: none;
+  padding: 10px 20px;
+  color: #291508;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%;
+}
+
+/* NOTIFICAÇÃO TOAST */
+.toast {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: #38761d;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 12px;
+  position: fixed;
+  z-index: 1000;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 2px solid #6aa84f;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.toast.show {
+  visibility: visible;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
